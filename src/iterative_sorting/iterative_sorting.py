@@ -26,10 +26,23 @@ print(selection_sort(arr))
 
 
 def bubble_sort(arr):
+    # set a swapped flag so if a swap happens then it's true
+    swapped = True
+
+    while swapped:
+        # set swap flag to false so if the swap criteria isn't met, then 
+        swapped = False
+        for i in range(len(arr) - 1):
+            # Check to see if the current number is larger then it's neighboor
+            if arr[i] > arr[i + 1]:
+                # If it's larger, then we do the swap
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                # If a swapp happens then we set the swapp flag back to true
+                swapped = True
 
     return arr
 
-
+print(bubble_sort(arr))
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
 
